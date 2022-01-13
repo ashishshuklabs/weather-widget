@@ -12,10 +12,11 @@ export interface WeatherData {
     }[];
   };
 }
-
+//Round decimal values to integer
 export const getRoundedValue = (value: number): string => {
   return value.toFixed(0);
 };
+//convert wind direction in to string.
 export const getWindDirection = (angle: number) => {
   const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
   return directions[Math.round(angle / 45) % 8];

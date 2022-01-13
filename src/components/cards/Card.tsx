@@ -19,7 +19,7 @@ import i11n from "../../assets/icon/11n.png";
 import i13n from "../../assets/icon/13n.png";
 import i50n from "../../assets/icon/50n.png";
 import { TemperatureUnit, WindValue } from "../../types";
-//load all images and return based on value recieved.
+//load all images and return based on value recieved. These are the ones I could find so far in open weather.
 const getImage = (imageName: string) => {
   switch (imageName) {
     case "01d":
@@ -78,7 +78,11 @@ export const Card = (props: CardProps) => {
       <h3 className="title">{props.title}</h3>
       <div className="weather-container">
         <div className="weather-icon">
-          <img src={`${getImage("")}`} alt="weather icon" className="icon" />
+          <img
+            src={`${getImage(props.weatherIcon)}`}
+            alt="weather icon"
+            className="icon"
+          />
         </div>
         <div className="stats-container">
           <h4 className="city">{props.city}</h4>
@@ -110,8 +114,6 @@ const StyledCard = styled.article<{ unit?: TemperatureUnit }>`
   align-items: center;
   border-radius: 5px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   .title {
     text-transform: uppercase;
   }

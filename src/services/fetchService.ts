@@ -7,6 +7,7 @@ const config = () => {
     apiKey: "f65f9ac44b09574be22f44d21ce49c58",
   };
 };
+//converting to promise based api
 const getPosition = (
   options?: PositionOptions
 ): Promise<GeolocationPosition> => {
@@ -14,6 +15,7 @@ const getPosition = (
     navigator.geolocation.getCurrentPosition(resolve, reject, options)
   );
 };
+//fetch city name from geolocation coordinates
 export const getCityName = async (): Promise<string> => {
   try {
     const location = await getPosition();
@@ -37,6 +39,7 @@ export const getCityName = async (): Promise<string> => {
       : "unknown error occured on fetching data";
   }
 };
+//fetch city weather from geolocation coordinates
 export const fetchCityWeather = async <
   T extends ServiceDataType
 >(): Promise<T> => {

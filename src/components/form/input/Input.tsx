@@ -13,6 +13,7 @@ export const Input = (props: InputProps) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
+  //debounce user input as there's no button to decide when the user's done jamming.
   const { debouncedValue } = useDebounce(value);
   useEffect(() => {
     if (props.onChange) {
