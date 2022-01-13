@@ -121,7 +121,7 @@ const StyledCard = styled.article<{ unit?: TemperatureUnit }>`
     display: flex;
     justify-content: space-between;
     .weather-icon {
-      width: 6.5rem;
+      width: 7rem;
     }
     .stats-container {
       display: flex;
