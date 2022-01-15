@@ -1,7 +1,7 @@
 # Basic Weather Widget
 
 ### Tech Stack
-TypeScript, React, Styled Components
+TypeScript, React, Styled Components, axios
 
 ### Features
 Responsive upto 500px screen size. Uses responsive units as much as possible. 
@@ -15,7 +15,7 @@ Change layout--> column stack on smaller screen sizes.
 Title, weather detail truncation on longer text.
 Adjust Form and Card sizes responsively.
 Add a little bit animation on radio button checked state.
-API call error handling could be improved. Temperature conversion between degree Celsius and Fahrenheit from Kelvin (currently just changing C and F while maintaining styling).
+API call error handling could be improved. Temperature conversion between degree Celsius and Fahrenheit from Kelvin (currently just changing C and F while keeping the same styling and default value).
 
 ### Assumptions
 Wind on/off radio buttons show/hide wind stats (on by default) on the weather card.
