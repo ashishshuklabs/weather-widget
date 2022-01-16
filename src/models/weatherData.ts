@@ -21,3 +21,10 @@ export const getWindDirection = (angle: number) => {
   const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
   return directions[Math.round(angle / 45) % 8];
 };
+
+export const getTemperature = (tempInKelvin: number, unit: "c" | "f") => {
+  if (unit === "c") {
+    return getRoundedValue(tempInKelvin - 273.15);
+  }
+  return getRoundedValue(((tempInKelvin - 273.15) * 9) / 5 + 32);
+};

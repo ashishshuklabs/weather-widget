@@ -48,7 +48,7 @@ export const fetchCityWeather = async <
     const configs: AxiosRequestConfig = {
       params: {
         appid: config().apiKey,
-        units: "metric",
+        // units: "metric",
         lat: location.coords.latitude,
         lon: location.coords.longitude,
         exclude: "minutely",

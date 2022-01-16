@@ -6,6 +6,7 @@ import { Form } from "../form/Form";
 import { UserFormData } from "../../types";
 import {
   getRoundedValue,
+  getTemperature,
   getWindDirection,
   WeatherData,
 } from "../../models/weatherData";
@@ -28,6 +29,19 @@ export const Content = () => {
   React.useEffect(() => {
     cityData();
   }, []);
+
+  const getDegrees = () => {
+    if (!data) {
+      return "No Data";
+    }
+    if (!formData.temperature || formData.temperature === "f") {
+      return getTemperature(data.current.temp, "f");
+    }
+    if (formData.temperature === "c") {
+      return getTemperature(data.current.temp, "c");
+    }
+    return "No Data";
+  };
   return (
     <StyledCards>
       {loading ? (
@@ -38,7 +52,7 @@ export const Content = () => {
         <Card
           title={formData.title ? formData.title : "some title"}
           city={city || "sydney"}
-          degrees={data ? getRoundedValue(data.current.temp) : "No Data"}
+          degrees={getDegrees()}
           wind={
             data
               ? `${getWindDirection(data.current.wind_deg)} ${getRoundedValue(
